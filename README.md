@@ -1,6 +1,8 @@
 # Rumi  
 **Automating compliance, illuminating provenance.**  
 
+[Versión en Español](README.es.md)
+
 Tokenized Stones of Peru — Provenance, Compliance, and Cultural Storytelling on Hedera.
 
 ---
