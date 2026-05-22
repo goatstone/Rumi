@@ -5,26 +5,17 @@
 
 Tokenized Stones of Peru — Provenance, Compliance, and Cultural Storytelling on Hedera.
 
----
-
-## 📖 Project Identity
 The word **“Rumi”** is Quechua (the language of the Inca Empire) for *stone*.  
-Rumi represents the tokenization of stones from Peru, blending cultural heritage with modern technology.
+Rumi represents the tokenization of stones and minerals from Peru, blending cultural heritage with modern technology.
 
----
+## ⚖️ Compliance
+Establishing gems, semi‑precious stones, and minerals as **Real World Assets (RWAs)** ensures their provenance information is immutable and verifiable.  
 
-## ⚖️ Compliance as a Core Strength
-Establishing gems, semi‑precious stones, and minerals as **Real World Assets (RWAs)** ensures their provenance is immutable and verifiable.  
+Peruvian law requires that the origin of any gem or mineral be legally sourced and documented. By placing stones on the blockchain, Rumi ensures compliance with this requirement. Each tokenized stone establishes its uniqueness and source, giving buyers confidence in how and where the stone was sourced.  
 
-Peruvian law requires that the origin of any gem or mineral be legally sourced. By placing stones on the blockchain, Rumi ensures compliance with this requirement. Each tokenized stone establishes its uniqueness and source, giving buyers confidence in how and where the stone was sourced.  
+## 💻 Online Platform
 
-An online platform displaying these stones improves visibility and increases the potential for sales. The objective of the Rumi project is to establish the **tokenization and display of stones originating from Peru**.  
-
-**Relevant References:**  
-- Ley General de Minería (DS Nº 014-92-EM)   ([ Ley General de Minería](https://wimperu.org/publicaciones/texto-unico-ordenado-de-la-ley-general-de-mineria/)) — Peru’s General Mining Law  
-- [Exportemos Portal (PROMPERÚ)](https://www.exportemos.pe) — Official portal for Peruvian exports  
-
----
+An online platform displaying Rumi stones or minerals improves visibility and increases the potential for sales. Buyers can connect their digital wallets to the platform and purchase Rumi NFTs directly, using supported cryptocurrencies. Each transaction is recorded on Hedera, ensuring compliance, provenance, and transparent routing of payments to artisans and treasury accounts.
 
 ## ✨ Mounted Stones & Stone Cuts
 Rumi also recognizes the artistry of how stones are presented. Many gems are mounted in handcrafted settings and cut in specific ways that add cultural and artistic value. Rumi NFTs capture these details by embedding mount and cut information directly into metadata.
@@ -38,7 +29,24 @@ Rumi also recognizes the artistry of how stones are presented. Many gems are mou
 
 This ensures buyers appreciate both the stone’s provenance and the artistry of its mount and cut.
 
----
+## ♻️  Lifecycle
+1. **Genesis**: Rumi NFT minted.
+   - **NFT Minting**: A single Rumi stone or mineral (or mounted stone) NFT is created using Hedera Token Service (HTS).
+   - **Metadata Anchoring**: The NFT embeds provenance details (Concession ID, REINFO, Vendor RUC) tied directly to the stone or mineral.
+
+     - Concession ID (INGEMMET)**: Unique identifier of the mining concession where the stone or mineral was legally extracted. Establishes the origin and legality of extraction under Peruvian law.
+
+     - REINFO ID**: Registration number in the national registry of formalized artisanal miners. Confirms that the mine and miner are recognized and compliant with formalization requirements.
+
+     - Vendor RUC (SUNAT)**: Tax ID of the company or store selling the stone or mineral. Provides commercial legitimacy by linking the seller to Peru’s tax authority.
+
+   - **Consensus Notarization**: The minting event is notarized on Hedera Consensus Service (HCS), establishing immutable proof of origin.
+   - **Compliance Foundation**: This Genesis record forms the verifiable digital identity of the stone or mineral, enabling traceability across later lifecycle events.
+2. **Mounting, Cutting Event**: Artisan RNA and mount type recorded, Hedera Consensus Service (HCS) notarization created.
+3. **Sales Event**: Royalties routed to artisan and treasury accounts. Hedera Consensus Service (HCS) notarization created.
+4. **Export Event**: Jewelry NFT linked to VUCE COD and HS Code, compliance proof anchored in HCS. Hedera Consensus Service (HCS) notarization created.
+
+
 
 ## 🌟 Future Vision
 
@@ -61,12 +69,6 @@ Achala will be the **jewelry counterpart to Rumi**, representing composite artis
 - **Cultural Storytelling**: Metadata captures mount type, artisan techniques, and artistic narratives, anchoring jewelry in Peru’s cultural identity.
 - **Compliance Anchoring**: Export events, HS Codes, and VUCE CODs are logged in Hedera Consensus Service, ensuring customs-ready transparency.
 
-### Lifecycle
-1. **Genesis**: Jewelry NFT minted, referencing constituent Rumi stones.
-2. **Mounting Event**: Artisan RNA and mount type recorded, HCS notarization created.
-3. **Sales Event**: Royalties routed to artisan and treasury accounts.
-4. **Export Event**: Jewelry NFT linked to VUCE COD and HS Code, compliance proof anchored in HCS.
-
 ### Differentiation
 - **Rumi** = Stones (single provenance units).
 - **Achala** = Jewelry (composite artisanal products).
@@ -74,7 +76,6 @@ Achala will be the **jewelry counterpart to Rumi**, representing composite artis
 
 ### Vision
 Achala will position Peruvian jewelry as **globally verifiable cultural assets**, combining blockchain transparency with artisanal heritage. It will empower artisans, protect provenance, and create new markets where buyers can trust both the stone’s origin and the artisan’s craft.
-
 
 ## 📚 Documentation
 
@@ -88,6 +89,6 @@ Achala will position Peruvian jewelry as **globally verifiable cultural assets**
 
 - [review](review.md)
 
-testnet token id : 0.0.8130672
-
-
+**Relevant References:**  
+- Ley General de Minería (DS Nº 014-92-EM)   ([ Ley General de Minería](https://wimperu.org/publicaciones/texto-unico-ordenado-de-la-ley-general-de-mineria/)) — Peru’s General Mining Law  
+- [Exportemos Portal (PROMPERÚ)](https://www.exportemos.pe) — Official portal for Peruvian exports  
