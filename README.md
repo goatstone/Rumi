@@ -69,7 +69,7 @@ Achala will be the **jewelry counterpart to Rumi**, representing composite artis
 ### Differentiation
 - **Rumi** = Stones and minerals (single provenance units).  
 - **Achala** = Jewelry (composite artisanal products).  
-- Together, they form a dual ecosystem: *Rumi for authenticity, Achala for artistry.*  
+
 
 ### Vision
 Achala will position Peruvian jewelry as **globally verifiable cultural assets**, combining blockchain transparency with artisanal heritage. It will empower artisans, protect provenance, and create new markets where buyers can trust both the stones and minerals’ origin and the artisan’s craft.
