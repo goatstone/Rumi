@@ -1,58 +1,97 @@
+/**
+ * @file createRumiToken.js
+ * @description Creates the Rumi NFT Class on Hedera,
+ * defining it as a non-fungible token with custom royalty fees and role keys.
+ * testnet and mainnet configurations are included.
+ * Use .env.testnet or .env.mainnet to set environment variables for the respective network.
+ * Comment or uncomment the mainnet or testnet section as needed.
+ */
+
 import {
-    Client,
-    CustomRoyaltyFee,
-    TokenCreateTransaction,
-    TokenType,
-    TokenSupplyType,
-    PrivateKey
+  Client,
+  CustomRoyaltyFee,
+  TokenCreateTransaction,
+  TokenType,
+  TokenSupplyType,
+  PrivateKey,
 } from "@hashgraph/sdk";
 import "dotenv/config";
+// For Testnet
+dotenv.config({ path: ".env.testnet" });
+// For Mainnet
+// dotenv.config({ path: ".env.mainnet" });
 
 async function main() {
-    // 1. Initialize Client with ECDSA
-    const operatorId = process.env.OPERATOR_ID;
-    const operatorKey = PrivateKey.fromStringECDSA(process.env.OPERATOR_KEY);
-    const client = Client.forTestnet().setOperator(operatorId, operatorKey);
-    // const client = Client.forMainnet().setOperator(operatorId, operatorKey);
-    console.log("Creating Rumi Gemstone NFT Class...");
+  console.log("🚀 Creating Rumi NFT Class...");
 
-    // 2. Define the Token
-    const transaction = new TokenCreateTransaction()
-        .setTokenName("Rumi")
-        .setTokenSymbol("RUMI")
-        .setTokenType(TokenType.NonFungibleUnique) // Makes it an NFT
-        .setDecimals(0)
-        .setInitialSupply(0)
-        .setTreasuryAccountId(operatorId)
-        .setSupplyType(TokenSupplyType.Infinite)
+  // --- 1. Initialize Client ---
+  // For Testnet
+  const operatorId = process.env.OPERATOR_ID;
+  const client = Client.forTestnet().setOperator(
+    operatorId,
+    PrivateKey.fromStringECDSA(process.env.OPERATOR_KEY),
+  );
+  // For Mainnet
+  // const client = Client.forMainnet().setOperator(
+  //   operatorId,
+  //   PrivateKey.fromStringECDSA(process.env.OPERATOR_KEY)
+  // );
+  console.log(`Network: ${client.networkName}, Operator: ${operatorId}`);
 
-        // Keys - Using your ECDSA key for all roles
-        .setAdminKey(operatorKey)   // To update token properties
-        .setSupplyKey(operatorKey)  // To mint new gemstones
-        .setMetadataKey(operatorKey) // To update NFT data (HIP-646/850)
-        .setPauseKey(operatorKey) // NEW: Security freeze capability
-        .setFeeScheduleKey(operatorKey)
-        .setCustomFees([
-            new CustomRoyaltyFee()
-                .setNumerator(5)
-                .setDenominator(100)
-                .setFeeCollectorAccountId(operatorId)
-        ])
-        .setWipeKey(operatorKey) // Essential for removing lost/seized assets
-        .setTokenMemo("Rumi Provenance: Authentic Peruvian Gemstones")
-        .freezeWith(client);
+  // --- 2. Load Role Keys ---
+  const treasuryAccountId = process.env.TREASURY_ID;
+  const adminKey = PrivateKey.fromStringECDSA(process.env.ADMIN_KEY);
+  const supplyKey = PrivateKey.fromStringECDSA(process.env.SUPPLY_KEY);
+  const feeScheduleKey = PrivateKey.fromStringECDSA(
+    process.env.FEE_SCHEDULE_KEY,
+  );
+  const pauseKey = PrivateKey.fromStringECDSA(process.env.PAUSE_KEY);
+  const wipeKey = PrivateKey.fromStringECDSA(process.env.WIPE_KEY);
 
-    // 3. Sign and Execute
-    const signTx = await transaction.sign(operatorKey);
+  // --- 3. Define Token Parameters ---
+  const transaction = new TokenCreateTransaction()
+    .setTokenName("Rumi")
+    .setTokenSymbol("RUMI")
+    .setTokenType(TokenType.NonFungibleUnique)
+    // Roles
+    .setTreasuryAccountId(treasuryAccountId)
+    .setAdminKey(adminKey)
+    .setSupplyKey(supplyKey)
+    .setFeeScheduleKey(feeScheduleKey)
+    .setPauseKey(pauseKey)
+    .setWipeKey(wipeKey)
+
+    // Royalty Policy
+    .setCustomFees([
+      new CustomRoyaltyFee()
+        .setNumerator(5)
+        .setDenominator(100)
+        .setFeeCollectorAccountId(treasuryAccountId),
+    ])
+
+    // Supply & divisibility
+    .setSupplyType(TokenSupplyType.Infinite)
+    .setInitialSupply(0)
+    .setDecimals(0)
+
+    // Provenance memo
+    .setTokenMemo("Rumi: Authentic Peruvian Stones and Minerals")
+    .freezeWith(client);
+
+  // --- 4. Sign & Execute ---
+  try {
+    const signTx = await transaction.sign(adminKey);
     const response = await signTx.execute(client);
     const receipt = await response.getReceipt(client);
-
     console.log("-----------------------------------");
     console.log(`✅ Success! Rumi Token ID: ${receipt.tokenId}`);
     console.log("-----------------------------------");
     console.log("SAVE THIS ID IN YOUR .env FILE AS: RUMI_TOKEN_ID");
+  } catch (err) {
+    console.error("❌ Token creation failed:", err, { operatorId, treasuryAccountId });
+  }
 
-    client.close();
+  client.close();
 }
 
 main().catch(console.error);
