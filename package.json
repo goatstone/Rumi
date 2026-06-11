@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@hashgraph/sdk": "^2.80.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "axios": "^1.6.0",
     "dotenv": "^16.4.0",
-    "pinata": "^2.5.5",
-    "axios": "^1.6.0"
+    "pinata": "^2.5.5"
   },
   "engines": {
     "node": ">=18.0.0"
