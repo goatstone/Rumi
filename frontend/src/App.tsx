@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 import Filters from "./components/Filters";
 import Marketplace from "./components/Marketplace";
 import StoneModal from "./components/StoneModal";
