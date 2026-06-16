@@ -1,11 +1,22 @@
-import React from 'react';
+import React from "react";
 
 const Header = () => {
   return (
     <header className="site-header">
       <div className="brand">
-        <h1>Rumi</h1>
-        <p className="tagline">Automating compliance, illuminating provenance.</p>
+        <div className="brand-row">
+          <img
+            src={`${import.meta.env.BASE_URL}logo.svg`}
+            alt="Rumi Logo"
+            className="logo"
+          />
+          <div className="brand-text">
+            <h1>Rumi</h1>
+            <p className="tagline">
+              Automating compliance, illuminating provenance.
+            </p>
+          </div>
+        </div>
       </div>
       <nav className="quick-actions">
         <button>Browse Stones</button>
@@ -14,6 +25,6 @@ const Header = () => {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
