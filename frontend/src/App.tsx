@@ -4,20 +4,7 @@ import { Hero } from "./components/Hero";
 import Filters from "./components/Filters";
 import Marketplace from "./components/Marketplace";
 import StoneModal from "./components/StoneModal";
-
-export type Attribute = { trait_type: string; value: string };
-type Properties = {
-  [k: string]: any;
-  stone_id?: string;
-  mining_concession?: string;
-  hcs_compliance_topic?: string;
-  compliance_proof_hcs?: string;
-};
-export type Item = {
-  name: string;
-  properties: Properties;
-  attributes: Attribute[];
-};
+import { Item } from './types/stone';
 
 function App(): JSX.Element {
   const [items, setItems] = useState<Item[]>([]);
@@ -114,7 +101,7 @@ function App(): JSX.Element {
     <div>
       <Header />
       <main className="container">
-        {Hero(filtered, setOpen)}
+        <Hero items={filtered} setOpen={setOpen} />
         <Filters filters={filters} setFilters={setFilters} />
         <Marketplace items={filtered} setOpen={setOpen} />
       </main>
