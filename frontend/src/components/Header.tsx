@@ -19,10 +19,9 @@ const Header = () => {
         </div>
       </div>
       <nav className="quick-actions">
-        <button>Browse Stones</button>
-        <button>Mint New NFT</button>
-        <button>Compliance Dashboard</button>
-      </nav>
+         <button className="browse-btn">Browse Collection</button>
+         <button className="browse-btn">About</button>
+       </nav>
     </header>
   );
 };

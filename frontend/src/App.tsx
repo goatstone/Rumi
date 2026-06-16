@@ -19,8 +19,21 @@ function App(): JSX.Element {
       <Header />
       <main className="container">
         <Hero items={filtered} setOpen={setOpen} />
-        <Filters filters={filters} setFilters={setFilters} />
-        <Marketplace items={filtered} setOpen={setOpen} />
+        <footer className="site-footer">
+          <div className="footer-links">
+            <a href="/about">About</a>
+            <a href="/faqs">FAQs</a>
+            <a href="/privacy">Privacy & Cookies</a>
+            <a href="/contact">Contact</a>
+            <a href="/mint">Mint New NFT</a>
+            <a href="/compliance">Compliance Dashboard</a>
+          </div>
+          <div className="footer-copy">
+            © 2026 Rumi Project. All rights reserved.
+          </div>
+        </footer>
+        {/* <Filters filters={filters} setFilters={setFilters} />
+        <Marketplace items={filtered} setOpen={setOpen} /> */}
       </main>
       <StoneModal open={open} setOpen={setOpen} />
     </div>
