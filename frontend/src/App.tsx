@@ -4,14 +4,15 @@ import { Hero } from "./components/Hero";
 import Filters from "./components/Filters";
 import Marketplace from "./components/Marketplace";
 import StoneModal from "./components/StoneModal";
-import { Item } from './types/stone';
+import { Item } from "./types/stone";
+import { filterItems, FiltersState } from "./utils/filterItems";
 
 function App(): JSX.Element {
   const [items, setItems] = useState<Item[]>([]);
-  const [filters, setFilters] = useState({
-    types: [] as string[],
-    regions: [] as string[],
-    cuts: [] as string[],
+  const [filters, setFilters] = useState<FiltersState>({
+    types: [],
+    regions: [],
+    cuts: [],
     type: "",
     region: "",
     cut: "",
@@ -57,45 +58,7 @@ function App(): JSX.Element {
       .catch((e) => console.error(e));
   }, []);
 
-  const filtered = items.filter((i) => {
-    if (
-      filters.type &&
-      !i.attributes.some(
-        (a) => a.trait_type === "Stone Type" && a.value === filters.type,
-      )
-    )
-      return false;
-    if (filters.region && i.properties.mining_concession !== filters.region)
-      return false;
-    if (
-      filters.cut &&
-      !i.attributes.some(
-        (a) => a.trait_type === "Stone Cut" && a.value === filters.cut,
-      )
-    )
-      return false;
-    if (
-      filters.mounted === "true" &&
-      !i.attributes.some((a) => a.trait_type === "Artisan")
-    )
-      return false;
-    if (
-      filters.mounted === "false" &&
-      i.attributes.some((a) => a.trait_type === "Artisan")
-    )
-      return false;
-    if (filters.q) {
-      const hay = (
-        i.properties.stone_id +
-        " " +
-        (i.attributes.find((a) => a.trait_type === "Artisan")?.value || "") +
-        " " +
-        (i.properties.vendor_ruc || "")
-      ).toLowerCase();
-      if (!hay.includes(filters.q.toLowerCase())) return false;
-    }
-    return true;
-  });
+  const filtered = filterItems(items, filters);
 
   return (
     <div>
