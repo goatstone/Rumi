@@ -31,19 +31,6 @@ const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
     </label>
 
     <label>
-      Region:{' '}
-      <select
-        value={filters.region}
-        onChange={(e) => setFilters({ ...filters, region: e.target.value })}
-      >
-        <option value="">All</option>
-        {filters.regions.map((r) => (
-          <option key={r} value={r}>{r}</option>
-        ))}
-      </select>
-    </label>
-
-    <label>
       Cut:{' '}
       <select
         value={filters.cut}
