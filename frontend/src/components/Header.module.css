@@ -1,0 +1,39 @@
+.siteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  background: linear-gradient(0deg, #ddd, #fdfdfd);
+  margin: 10px;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 148px;
+  height: auto;
+  margin-right: 12px;
+}
+
+.brandText h1 {
+  margin: 0;
+  font-size: xxx-large;
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* Optional: quick actions if you re‑enable buttons in header */
+.quickActions {
+  display: flex;
+  gap: 12px;
+}

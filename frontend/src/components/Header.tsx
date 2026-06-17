@@ -1,32 +1,27 @@
+// src/components/Header.tsx
 import React from "react";
+import NavBar from "./NavBar";
+import styles from "./Header.module.css";
 
 const Header = () => {
-
   return (
-    <header className="site-header">
-      <div className="brand">
-        <div className="brand-row">
+    <header className={styles.siteHeader}>
+      <div className={styles.brand}>
+        <div className={styles.brandRow}>
           <img
             src={`${import.meta.env.BASE_URL}logo.svg`}
             alt="Rumi Logo"
-            className="logo"
+            className={styles.logo}
           />
-          <div className="brand-text">
+          <div className={styles.brandText}>
             <h1>Rumi</h1>
-            <p className="tagline">
+            <p className={styles.tagline}>
               Automating compliance, illuminating provenance.
             </p>
           </div>
         </div>
       </div>
-      <nav className="quick-actions">
-        <a href="/collection" className="browse-btn">
-          Browse Collection
-        </a>
-        <a href="/about" className="browse-btn">
-          About
-        </a>
-      </nav>
+      <NavBar />
     </header>
   );
 };
