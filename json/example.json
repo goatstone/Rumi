@@ -34,7 +34,9 @@
     "store_receipt_hash": "sha256-abc123def456...",
     "sinceramiento_status": "Verified (Georeferenced)",
     "inei_census_id": "INEI-2026-MAPE-8823",
-    "hcs_compliance_topic": "0.0.987654"
+    "hcs_compliance_topic": "0.0.987654",
+    "cut_by_id": "ARTISAN-567",
+    "mounted_by_id": ""
   },
   "files": [
     {
@@ -76,9 +78,9 @@
     { "trait_type": "Grading", "value": "Collector Grade" },
     { "trait_type": "Date Mined", "value": "2026-02-14" },
     { "trait_type": "Stone Cut", "value": "Cabochon" },
-    { "trait_type": "Artisan", "value": "María López" },
-    { "trait_type": "Artisan Technique", "value": "Wire Wrapping" },
-    { "trait_type": "Track", "value": "Track C: Mine-to-Artisan" },
+    { "trait_type": "Cut By", "value": "ARTISAN-567" },
+    { "trait_type": "Mounted By", "value": "" },
+    { "trait_type": "Mount Technique", "value": "Wire Wrapping" },
     { "trait_type": "Mining Concession", "value": "Arequipa-Chrys-03" },
     {
       "trait_type": "Legal Status",
