@@ -211,35 +211,6 @@ body {
   gap: 16px;
   margin-top: 14px;
 }
-.card {
-  background: var(--card);
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.5);
-}
-
-.thumb {
-  height: 140px;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #efe7ff, #f7f3fb);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36px;
-}
-.meta {
-  margin-top: 8px;
-  font-size: 0.9rem;
-}
-.badge {
-  display: inline-block;
-  background: #eef9f1;
-  color: #107a33;
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-}
 .modal {
   position: fixed;
   inset: 0;
