@@ -1,73 +1,23 @@
 .marketplace {
   padding: 1rem;
 }
-
+.controls {
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping to a new line */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* spacing between Filters and Pager */
+}
+.controls > * {
+  flex: 1 1 auto; /* both can shrink/grow */
+  min-width: 250px; /* ensures they wrap if too narrow */
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.paging {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.paging button {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 4px;
-  background: #666;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.paging button:hover:not(:disabled) {
-  background: #aaa;
-}
-
-.paging button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.pageNumbers {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.pageNumbers button {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 4px;
-  background: #fdfdfd;
-  color: #000;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.pageNumbers button:hover {
-  background: #ddd;
-}
-
-.activePage {
-  background: #444;
-  color: #fff;
-  font-weight: bold;
-}
-
 .noResults {
   text-align: center;
   margin: 2rem 0;

@@ -6,14 +6,11 @@ import StoneModal from "./StoneModal";
 import { Rumi } from "../types/rumi";
 import { RumiFacade } from "../data/RumiFacade";
 import styles from "./Marketplace.module.css";
+import Pager from "./Pager";
 
 const Marketplace: React.FC = () => {
   const [open, setOpen] = useState<Rumi | null>(null);
-
-  // Load all items synchronously
   const data = RumiFacade.fromJSON().getAll();
-
-  // Filters state
   const [filters, setFilters] = useState({
     type: "",
     types: Array.from(
@@ -37,12 +34,8 @@ const Marketplace: React.FC = () => {
     ),
     mounted: "",
   });
-
-  // Paging state
   const [page, setPage] = useState(1);
   const perPage = 6;
-
-  // Filtering logic
   const filtered = data.filter((i) => {
     if (
       filters.type &&
@@ -91,15 +84,17 @@ const Marketplace: React.FC = () => {
 
     return true;
   });
-
-  // Paging slice
   const totalPages = Math.ceil(filtered.length / perPage);
   const pagedItems = filtered.slice((page - 1) * perPage, page * perPage);
 
   return (
     <section className={styles.marketplace}>
-      <Filters filters={filters} setFilters={setFilters} />
-
+      <div className={styles.controls}>
+        <Filters filters={filters} setFilters={setFilters} />
+        <Pager page={page} totalPages={totalPages} setPage={setPage} />
+      </div>
+      {/* <Filters filters={filters} setFilters={setFilters} />
+      <Pager page={page} totalPages={totalPages} setPage={setPage} /> */}
       {filtered.length === 0 ? (
         <div className={styles.noResults}>
           No stones match your filters. Try adjusting your search.
@@ -115,38 +110,8 @@ const Marketplace: React.FC = () => {
               />
             ))}
           </div>
-
-          {/* Paging controls only if results exist */}
-          {totalPages > 1 && (
-            <div className={styles.paging}>
-              <button disabled={page === 1} onClick={() => setPage(page - 1)}>
-                Previous
-              </button>
-              <div className={styles.pageNumbers}>
-                {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(
-                  (num) => (
-                    <button
-                      key={num}
-                      className={num === page ? styles.activePage : ""}
-                      onClick={() => setPage(num)}
-                    >
-                      {num}
-                    </button>
-                  ),
-                )}
-              </div>
-              <button
-                disabled={page === totalPages}
-                onClick={() => setPage(page + 1)}
-              >
-                Next
-              </button>
-            </div>
-          )}
         </>
       )}
-
-      {/* Shared StoneModal */}
       <StoneModal open={open} setOpen={setOpen} />
     </section>
   );

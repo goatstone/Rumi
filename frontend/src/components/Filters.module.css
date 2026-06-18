@@ -1,0 +1,16 @@
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filters label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.filters select,
+.filters input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}

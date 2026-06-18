@@ -1,25 +1,24 @@
 // src/components/Filters.tsx
 import React from "react";
+import styles from "./Filters.module.css";
 
 interface FiltersProps {
   filters: {
     type: string;
     types: string[];
-    region: string;
-    regions: string[];
     cut: string;
     cuts: string[];
     mounted: string;
-    q: string;
   };
   setFilters: (filters: any) => void;
 }
 
 const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
-  <section className="filters">
-    <label>
-      Type:{" "}
+  <section className={styles.filters}>
+    <label className={styles.label}>
+      Type:
       <select
+        className={styles.select}
         value={filters.type}
         onChange={(e) => setFilters({ ...filters, type: e.target.value })}
       >
@@ -31,9 +30,11 @@ const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
         ))}
       </select>
     </label>
-    <label>
-      Cut:{" "}
+
+    <label className={styles.label}>
+      Cut:
       <select
+        className={styles.select}
         value={filters.cut}
         onChange={(e) => setFilters({ ...filters, cut: e.target.value })}
       >
@@ -45,9 +46,11 @@ const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => (
         ))}
       </select>
     </label>
-    <label>
-      Mounted:{" "}
+
+    <label className={styles.label}>
+      Mounted:
       <select
+        className={styles.select}
         value={filters.mounted}
         onChange={(e) => setFilters({ ...filters, mounted: e.target.value })}
       >
