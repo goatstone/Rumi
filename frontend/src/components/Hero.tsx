@@ -16,8 +16,14 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.heroDescription}>
         <p>
-          Discover artisan‑crafted minerals with verified provenance and
-          transparent compliance.
+          In Quechua, <b>Umiña</b> means a single precious stone, while <b>Achala</b> means
+          jewelry crafted from many stones.
+        </p>
+        <p>
+          <b>Umiña Achala</b> unites Peru’s stones, minerals and jewelry with
+          immutable records, authentic origins, and artisan storytelling. Every
+          piece is traced from mine to craft, ensuring compliance, provenance, and
+          cultural heritage.
         </p>
       </div>
 

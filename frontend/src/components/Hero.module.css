@@ -1,19 +1,23 @@
 .hero {
-  padding: 0.5rem;
+  padding: 0.1rem 0.5rem;
   text-align: center;
 }
 
 .heroDescription {
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
   color: #444;
-  text-align: center;
+  text-align: left;
 }
 
 .hero h2 {
   margin-bottom: 1.5rem;
   font-size: 2rem;
+}
+.heroDescription p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
 }
 
 .heroGrid {

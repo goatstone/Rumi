@@ -14,9 +14,9 @@ const Header = () => {
             className={styles.logo}
           />
           <div className={styles.brandText}>
-            <h1>Rumi</h1>
+            <h1>Umiña Achala</h1>
             <p className={styles.tagline}>
-              Automating compliance, illuminating provenance.
+              <b>Stones and jewelry from Peru</b>
             </p>
           </div>
         </div>
