@@ -1,6 +1,6 @@
 // src/components/Marketplace.tsx
 import React, { useState } from "react";
-import MarketplaceCard from "./MarketplaceCard";
+import Card from "./Card";
 import Filters from "./Filters";
 import StoneModal from "./StoneModal";
 import { Rumi } from "../types/rumi";
@@ -103,7 +103,7 @@ const Marketplace: React.FC = () => {
         <>
           <div className={styles.cards}>
             {pagedItems.map((it) => (
-              <MarketplaceCard
+              <Card
                 key={it.properties.stone_id}
                 item={it}
                 onClick={setOpen}
