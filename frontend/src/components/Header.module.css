@@ -32,16 +32,43 @@
   color: var(--muted);
 }
 
-/* Optional: quick actions if you re‑enable buttons in header */
-.quickActions {
+.navContainer {
   display: flex;
+  align-items: center;
+  gap: 0;
   gap: 12px;
 }
-
 .langButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: transparent;
-  border: 1px solid var(--muted);
-  padding: 6px 8px;
-  border-radius: 4px;
-  cursor: pointer;
+  border: none;
 }
+
+.activeFlag {
+  font-size: 1.5rem;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  padding: 0.4rem;
+  opacity: 1;
+  cursor: default;
+}
+
+.inactiveFlag {
+  font-size: 1.5rem;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  padding: 0.4rem;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inactiveFlag:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+

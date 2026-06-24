@@ -30,10 +30,39 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-        <button onClick={toggleLanguage} className={styles.langButton}>
-          {i18n.language?.startsWith("es") ? "EN" : "ES"}
-        </button>
+      <div className={styles.navContainer}>
+        <div className={styles.langButton}>
+          <span
+            role="img"
+            aria-label="Español"
+            title="Español"
+            className={
+              i18n.language?.startsWith("es")
+                ? styles.activeFlag
+                : styles.inactiveFlag
+            }
+            onClick={
+              i18n.language?.startsWith("es") ? undefined : toggleLanguage
+            }
+          >
+            🇪🇸
+          </span>
+          <span
+            role="img"
+            aria-label="English"
+            title="English"
+            className={
+              i18n.language?.startsWith("es")
+                ? styles.inactiveFlag
+                : styles.activeFlag
+            }
+            onClick={
+              i18n.language?.startsWith("es") ? toggleLanguage : undefined
+            }
+          >
+            🇬🇧
+          </span>
+        </div>
         <NavBar />
       </div>
     </header>
