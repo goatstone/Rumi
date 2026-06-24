@@ -1,7 +1,7 @@
 .aboutPage {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   font-family: system-ui, sans-serif;
   line-height: 1.6;
 }
@@ -24,7 +24,7 @@
 .tagline {
   text-align: center;
   font-style: italic;
-  margin-bottom: 2rem;
+  margin: 0.5rem;
 }
 
 .section {
