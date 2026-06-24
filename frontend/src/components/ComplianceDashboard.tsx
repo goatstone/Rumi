@@ -11,7 +11,6 @@ interface ComplianceItem {
   exportStatus: "Pending" | "Verified" | "Restricted" | "Not Applicable";
   status: "Compliant" | "Pending" | "Restricted";
   lastUpdated: string;
-  details: string; // full item info for modal
 }
 
 const mockData: ComplianceItem[] = [
@@ -23,8 +22,7 @@ const mockData: ComplianceItem[] = [
     txId: "0.0.12345",
     exportStatus: "Verified",
     status: "Compliant",
-    lastUpdated: "2026-06-20",
-    details: "Stone ST-001, permit PER-123, raw cut, exported with VUCE permit VUCE-2026-EXP-100."
+    lastUpdated: "2026-06-20"
   },
   {
     id: "2",
@@ -34,8 +32,7 @@ const mockData: ComplianceItem[] = [
     txId: "0.0.67890",
     exportStatus: "Pending",
     status: "Pending",
-    lastUpdated: "2026-06-21",
-    details: "Stone ST-002, permit PER-456, cut type, awaiting export clearance."
+    lastUpdated: "2026-06-21"
   },
   {
     id: "3",
@@ -45,17 +42,34 @@ const mockData: ComplianceItem[] = [
     txId: "0.0.54321",
     exportStatus: "Restricted",
     status: "Restricted",
-    lastUpdated: "2026-06-22",
-    details: "Stone ST-003 flagged as restricted item, export blocked."
+    lastUpdated: "2026-06-22"
   }
 ];
 
 const ComplianceDashboard: React.FC = () => {
-  const [selectedItem, setSelectedItem] = useState<ComplianceItem | null>(null);
+  const [search, setSearch] = useState("");
+
+  const filteredData = mockData.filter(
+    (item) =>
+      item.stoneId.includes(search) ||
+      item.permitNumber.includes(search) ||
+      item.cutType.toLowerCase().includes(search.toLowerCase()) ||
+      item.txId.includes(search)
+  );
 
   return (
     <div className={styles.dashboard}>
-      <h1 className={styles.title}>Compliance Dashboard</h1>
+      <h1 className={styles.title}>Compliance Dashboard (Regulator View)</h1>
+
+      <div className={styles.searchBar}>
+        <input
+          type="text"
+          placeholder="Search by Stone ID, Permit, Cut Type, or Hedera Tx ID"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className={styles.input}
+        />
+      </div>
 
       <table className={styles.table}>
         <thead>
@@ -70,12 +84,8 @@ const ComplianceDashboard: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {mockData.map((item) => (
-            <tr
-              key={item.id}
-              className={item.status === "Restricted" ? styles.restrictedRow : ""}
-              onClick={() => setSelectedItem(item)}
-            >
+          {filteredData.map((item) => (
+            <tr key={item.id} className={item.status === "Restricted" ? styles.restrictedRow : ""}>
               <td>{item.stoneId}</td>
               <td>{item.permitNumber}</td>
               <td>{item.cutType}</td>
@@ -92,22 +102,29 @@ const ComplianceDashboard: React.FC = () => {
         </tbody>
       </table>
 
-      {selectedItem && (
-        <div className={styles.modalOverlay} onClick={() => setSelectedItem(null)}>
-          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-            <h2>Item Details</h2>
-            <p><strong>Stone ID:</strong> {selectedItem.stoneId}</p>
-            <p><strong>Permit Number:</strong> {selectedItem.permitNumber}</p>
-            <p><strong>Cut Type:</strong> {selectedItem.cutType}</p>
-            <p><strong>Tx ID:</strong> {selectedItem.txId}</p>
-            <p><strong>Export Status:</strong> {selectedItem.exportStatus}</p>
-            <p><strong>Status:</strong> {selectedItem.status}</p>
-            <p><strong>Last Updated:</strong> {selectedItem.lastUpdated}</p>
-            <p><strong>Details:</strong> {selectedItem.details}</p>
-            <button onClick={() => setSelectedItem(null)} className={styles.closeButton}>Close</button>
-          </div>
-        </div>
-      )}
+      <section className={styles.columnTitles}>
+        <h2>📊 Column Titles Explained</h2>
+        <ul>
+          <li><strong>Stone ID</strong> — Unique identifier for each stone.</li>
+          <li><strong>Permit Number</strong> — Official export/mining permit reference.</li>
+          <li><strong>Cut Type</strong> — Raw, Cut, or Mounted state of the stone.</li>
+          <li><strong>Tx ID</strong> — Hedera Transaction ID anchoring compliance proof.</li>
+          <li><strong>Export Status</strong> — Export lifecycle state (Pending, Verified, Restricted, Not Applicable).</li>
+          <li><strong>Status</strong> — Current compliance state (Compliant, Pending, Restricted).</li>
+          <li><strong>Last Updated</strong> — Timestamp of the latest compliance check.</li>
+        </ul>
+      </section>
+
+      <section className={styles.timeline}>
+        <h2>📜 Audit Trail</h2>
+        <ul>
+          <li>Stone registered → Permit issued</li>
+          <li>Cutting process logged</li>
+          <li>Mounting process logged</li>
+          <li>Export permit verified</li>
+          <li>Transaction anchored on Hedera</li>
+        </ul>
+      </section>
     </div>
   );
 };
