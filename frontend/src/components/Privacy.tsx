@@ -16,8 +16,14 @@ const Privacy = () => {
           third‑parties outside the ecosystem.
         </p>
         <ul>
-          <li>Wallet addresses are used solely for authentication and transactions.</li>
-          <li>Compliance identifiers (Concession ID, REINFO ID, RUC, RNA) are stored immutably on Hedera.</li>
+          <li>
+            Wallet addresses are used solely for authentication and
+            transactions.
+          </li>
+          <li>
+            Compliance identifiers (Concession ID, REINFO ID, RUC, RNA) are
+            stored immutably on Hedera.
+          </li>
           <li>Metadata is linked to NFTs for provenance and transparency.</li>
         </ul>
       </section>
@@ -30,9 +36,18 @@ const Privacy = () => {
           integrity, and analyze platform usage.
         </p>
         <ul>
-          <li><strong>Essential Cookies:</strong> Required for login, wallet connection, and secure navigation.</li>
-          <li><strong>Preference Cookies:</strong> Store language, display, and accessibility settings.</li>
-          <li><strong>Analytics Cookies:</strong> Provide insights into platform usage to improve services.</li>
+          <li>
+            <strong>Essential Cookies:</strong> Required for login, wallet
+            connection, and secure navigation.
+          </li>
+          <li>
+            <strong>Preference Cookies:</strong> Store language, display, and
+            accessibility settings.
+          </li>
+          <li>
+            <strong>Analytics Cookies:</strong> Provide insights into platform
+            usage to improve services.
+          </li>
         </ul>
       </section>
 
@@ -42,14 +57,6 @@ const Privacy = () => {
           You may request access to your data, ask for corrections, or request
           deletion where applicable. Blockchain records are immutable, but
           off‑chain data such as preferences can be updated or removed.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>📧 Contact</h2>
-        <p>
-          For privacy or cookie inquiries, please reach out to our compliance
-          team at <a href="mailto:privacy@uminaachala.org">privacy@uminaachala.org</a>.
         </p>
       </section>
     </div>
