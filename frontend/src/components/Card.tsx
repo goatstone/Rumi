@@ -2,6 +2,7 @@
 import React from "react";
 import { Rumi } from "../types/rumi";
 import styles from "./Card.module.css";
+import { useTranslation } from "react-i18next";
 
 interface CardProps {
   item: Rumi;
@@ -9,6 +10,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ item, onClick }) => {
+  const { t } = useTranslation();
   const cut = item.attributes.find((a) => a.trait_type === "Stone Cut")?.value;
   const type = item.attributes.find(
     (a) => a.trait_type === "Stone Type",
@@ -27,15 +29,15 @@ const Card: React.FC<CardProps> = ({ item, onClick }) => {
         {cut && <span className={styles.badge}>{cut}</span>}{" "}
         {mountedBy && (
           <p className={styles.mountedBy}>
-            <span className={styles.label}>Mounted by:</span> {mountedBy}
+            <span className={styles.label}>{t("card.mountedBy")}</span> {mountedBy}
           </p>
         )}
         <div className={styles.cardActions}>
         <button onClick={() => onClick(item)}>
-          {item.properties.stone_id ? "View Umiña" : "View Achala"}
+          {item.properties.stone_id ? t("card.viewUmina") : t("card.viewAchala")}
         </button>
           {/* <button onClick={() => onClick(item)}>View Umiña</button> */}
-          <button className={styles.cartIcon} onClick={() => alert("Buy with RUMI coming soon!")}>
+          <button className={styles.cartIcon} onClick={() => alert(t("card.buySoon"))}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

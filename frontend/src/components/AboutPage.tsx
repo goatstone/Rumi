@@ -1,102 +1,60 @@
 import React from "react";
 import styles from "./AboutPage.module.css";
+import { useTranslation } from "react-i18next";
 
 const AboutPage = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles.aboutPage}>
-      <h1 className={styles.title}>About Umina Achala</h1>
-      <p className={styles.tagline}>Stones and jewelry from Peru</p>
+      <h1 className={styles.title}>{t("about.title")}</h1>
+      <p className={styles.tagline}>{t("about.tagline")}</p>
 
       <section className={styles.section}>
-        <h2>🌄 What is Umina Achala?</h2>
-        <p>
-          <strong>Umina Achala</strong> unites stone provenance with artisanal
-          jewelry. It bridges compliance, heritage, and digital provenance,
-          creating a transparent marketplace for stones (
-          <strong>Umina</strong>) and jewelry (
-          <strong>Achala</strong> originating from Peru).
-        </p>
-        <p>
-          The project is built on the <strong>Hedera blockchain</strong>, chosen
-          for its speed, low fees, and energy efficiency. Hedera’s distributed
-          ledger ensures that every stone and jewelry record is immutable,
-          auditable, and verifiable. This means provenance data, artisan
-          recognition, and compliance identifiers are securely stored and
-          accessible worldwide.
-        </p>
+        <h2>{t("about.what")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("about.whatDesc1") }} />
+        <p dangerouslySetInnerHTML={{ __html: t("about.whatDesc2") }} />
       </section>
 
       <section className={styles.section}>
-        <h2>💎 What is Umina?</h2>
-        <p>
-          <strong>Umina</strong> represents the certified stone (or mineral in solid form) in raw, cut or
-          mounted form. Each stone is documented
-          with provenance records, ensuring authenticity and compliance.
-        </p>
+        <h2>{t("about.umina")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("about.uminaDesc") }} />
       </section>
 
       <section className={styles.section}>
-        <h2>🌍 What is Achala?</h2>
-        <p>
-          <strong>Achala</strong> represents artisanal jewelry crafted from
-          tokenized stones and minerals. While Umina certifies provenance,
-          Achala transforms these stones into culturally significant creations
-          that honor artisans and preserve heritage.
-        </p>
+        <h2>{t("about.achala")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("about.achalaDesc") }} />
       </section>
 
       <section className={styles.section}>
-        <h2>⚖️ Compliance</h2>
-        <p>
-          Every Umina and Achala piece is anchored in
-          <strong> Real World Assets (RWAs)</strong>, ensuring verifiability and
-          compliance with Peruvian regulations.
-        </p>
+        <h2>{t("about.compliance")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("about.complianceDesc") }} />
         <ul>
-          <li>Concession ID (INGEMMET)</li>
-          <li>REINFO ID</li>
-          <li>Vendor RUC (SUNAT)</li>
-          <li>Artisan RNA for jewelry</li>
+          {t("about.complianceItems", { returnObjects: true }).map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
       </section>
 
       <section className={styles.section}>
-        <h2>💻 Online Platform</h2>
-        <h3>https://umina-achala.pe</h3>
-        <p>
-          The <strong>Umina Achala Online Platform</strong> is the digital hub
-          where provenance, compliance, and artistry converge. It provides
-          collectors, artisans, and reviewers with transparent access to the
-          lifecycle of stones and jewelry.
-        </p>
+        <h2>{t("about.platform")}</h2>
+        <h3>{t("about.platformUrl")}</h3>
+        <p dangerouslySetInnerHTML={{ __html: t("about.platformDesc") }} />
 
         <div className={styles.subSection}>
-          <h3>🔐 Wallet Integration</h3>
+          <h3>{t("about.wallet")}</h3>
           <ul>
-            <li>
-              Users connect <strong>Hedera-compatible wallets</strong> to
-              authenticate and transact.
-            </li>
-            <li>
-              Wallets enable secure acquisition of{" "}
-              <strong>Umina (stone NFTs)</strong> and{" "}
-              <strong>Achala (jewelry NFTs)</strong>.
-            </li>
+            {t("about.walletItems", { returnObjects: true }).map((item, i) => (
+              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
           </ul>
         </div>
 
         <div className={styles.subSection}>
-          <h3>📜 Provenance Explorer</h3>
+          <h3>{t("about.provenance")}</h3>
           <ul>
-            <li>
-              Each NFT includes <strong>metadata</strong>: concession ID, REINFO
-              ID, artisan RNA, and vendor RUC.
-            </li>
-            <li>
-              Buyers can trace the <strong>origin of stones</strong> and the{" "}
-              <strong>artisanship of jewelry</strong>.
-            </li>
-            <li>Provenance records are immutable and verifiable on-chain.</li>
+            {t("about.provenanceItems", { returnObjects: true }).map((item, i) => (
+              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
           </ul>
         </div>
 

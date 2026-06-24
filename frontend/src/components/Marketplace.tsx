@@ -7,8 +7,10 @@ import { Rumi } from "../types/rumi";
 import { RumiFacade } from "../data/RumiFacade";
 import styles from "./Marketplace.module.css";
 import Pager from "./Pager";
+import { useTranslation } from "react-i18next";
 
 const Marketplace: React.FC = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState<Rumi | null>(null);
   const data = RumiFacade.fromJSON().getAll();
   const [filters, setFilters] = useState({
@@ -97,7 +99,7 @@ const Marketplace: React.FC = () => {
       <Pager page={page} totalPages={totalPages} setPage={setPage} /> */}
       {filtered.length === 0 ? (
         <div className={styles.noResults}>
-          No stones match your filters. Try adjusting your search.
+          {t("marketplace.noResults")}
         </div>
       ) : (
         <>

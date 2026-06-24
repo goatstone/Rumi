@@ -1,6 +1,7 @@
 // src/components/Pager.tsx
 import React from "react";
 import styles from "./Pager.module.css";
+import { useTranslation } from "react-i18next";
 
 interface PagerProps {
   page: number;
@@ -9,6 +10,7 @@ interface PagerProps {
 }
 
 const Pager: React.FC<PagerProps> = ({ page, totalPages, setPage }) => {
+  const { t } = useTranslation();
   if (totalPages <= 1) return null; // show nothing if only one page
 
   return (
@@ -18,7 +20,7 @@ const Pager: React.FC<PagerProps> = ({ page, totalPages, setPage }) => {
         onClick={() => setPage(page - 1)}
         className={styles.navButton}
       >
-        Previous
+        {t("pager.previous")}
       </button>
 
       <div className={styles.pageNumbers}>
@@ -38,7 +40,7 @@ const Pager: React.FC<PagerProps> = ({ page, totalPages, setPage }) => {
         onClick={() => setPage(page + 1)}
         className={styles.navButton}
       >
-        Next
+        {t("pager.next")}
       </button>
     </div>
   );

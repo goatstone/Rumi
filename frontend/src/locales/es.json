@@ -1,0 +1,144 @@
+{
+  "site": {
+    "title": "Umiña Achala",
+    "tagline": "Piedras y joyería desde Perú"
+  },
+  "nav": {
+    "home": "Inicio",
+    "marketplace": "Mercado",
+    "about": "Acerca de",
+    "faqs": "Preguntas",
+    "privacy": "Privacidad y Cookies",
+    "contact": "Contacto",
+    "admin": "Admin NFT",
+    "compliance": "Panel de Cumplimiento"
+  },
+  "footer": {
+    "copyright": "© 2026 Proyecto Rumi. Todos los derechos reservados."
+  },
+  "hero": {
+    "desc1": "En Quechua, <b>Umiña</b> significa una sola piedra preciosa, mientras que <b>Achala</b> significa joyería hecha con muchas piedras.",
+    "desc2": "<b>Umiña Achala</b> une las piedras, minerales y joyas de Perú con registros inmutables, orígenes auténticos e historias de artesanos. Cada pieza se rastrea desde la mina hasta el arte, garantizando cumplimiento normativo, procedencia y patrimonio cultural.",
+    "browse": "Explorar Mercado"
+  },
+  "about": {
+    "title": "Acerca de Umiña Achala",
+    "tagline": "Piedras y joyería desde Perú",
+    "what": "🌄 ¿Qué es Umiña Achala?",
+    "whatDesc1": "<strong>Umiña Achala</strong> une la procedencia de piedras con joyería artesanal. Conecta cumplimiento normativo, patrimonio y procedencia digital, creando un mercado transparente para piedras (<strong>Umiña</strong>) y joyería (<strong>Achala</strong>) de Perú.",
+    "whatDesc2": "El proyecto se construye en la <strong>blockchain Hedera</strong>, elegida por su velocidad, bajas comisiones y eficiencia energética. El libro mayor distribuido de Hedera asegura que cada registro de piedra y joyería sea inmutable, auditable y verificable. Esto significa que los datos de procedencia, el reconocimiento de artesanos e identificadores de cumplimiento se almacenan de forma segura y son accesibles mundialmente.",
+    "umina": "💎 ¿Qué es Umiña?",
+    "uminaDesc": "<strong>Umiña</strong> representa la piedra certificada (o mineral en forma sólida) en forma bruta, tallada o montada. Cada piedra se documenta con registros de procedencia, garantizando autenticidad y cumplimiento normativo.",
+    "achala": "🌍 ¿Qué es Achala?",
+    "achalaDesc": "<strong>Achala</strong> representa joyería artesanal hecha con piedras y minerales tokenizados. Mientras que Umiña certifica la procedencia, Achala transforma estas piedras en creaciones culturalmente significativas que honran a los artesanos y preservan el patrimonio.",
+    "compliance": "⚖️ Cumplimiento Normativo",
+    "complianceDesc": "Cada pieza de Umiña y Achala se ancla en <strong>Activos del Mundo Real (RWAs)</strong>, garantizando verificabilidad y cumplimiento con las regulaciones peruanas.",
+    "complianceItems": ["ID de Concesión (INGEMMET)", "ID REINFO", "RUC del Vendedor (SUNAT)", "RNA del Artesano para joyería"],
+    "platform": "💻 Plataforma en Línea",
+    "platformUrl": "https://umina-achala.pe",
+    "platformDesc": "La <strong>Plataforma en Línea de Umiña Achala</strong> es el centro digital donde convergen la procedencia, el cumplimiento y la artesanía. Ofrece a coleccionistas, artesanos y revisores acceso transparente al ciclo de vida de piedras y joyas.",
+    "wallet": "🔐 Integración de Billetera",
+    "walletItems": ["Los usuarios conectan <strong>carteras compatibles con Hedera</strong> para autenticarse y realizar transacciones.", "Las billeteras permiten la adquisición segura de <strong>Umiña (NFTs de piedras)</strong> y <strong>Achala (NFTs de joyería)</strong>."],
+    "provenance": "📜 Explorador de Procedencia",
+    "provenanceItems": ["Cada NFT incluye <strong>metadatos</strong>: ID de concesión, ID REINFO, RNA del artesano y RUC del vendedor.", "Los compradores pueden rastrear el <strong>origen de las piedras</strong> y la <strong>artesanía de la joyería</strong>.", "Los registros de procedencia son inmutables y verificables en cadena."]
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Qué es Umiña Achala?",
+    "a1": "<strong>Umiña Achala</strong> es un proyecto de tecnología cultural que une la procedencia de piedras con joyería artesanal. Conecta cumplimiento normativo, patrimonio y procedencia digital, creando un mercado transparente donde las piedras certificadas (Umiña) se elevan a joyería (Achala).",
+    "q2": "¿Qué es Umiña?",
+    "a2": "<strong>Umiña</strong> representa piedras certificadas — brutas, talladas o montadas — documentadas con registros de procedencia. Cada NFT de Umiña garantiza autenticidad, cumplimiento con la ley peruana y prueba inmutable del origen.",
+    "q3": "¿Qué es Achala?",
+    "a3": "<strong>Achala</strong> es la contraparte de joyería para Umiña. Mientras que Umiña certifica piedras individuales, Achala representa joyería artesanal compuesta, combinando múltiples piedras en creaciones culturalmente significativas preservando la procedencia y reconociendo la artesanía.",
+    "q4": "¿Cómo asegura Umiña Achala el cumplimiento normativo?",
+    "a4": "Cada NFT incluye identificadores legales como ID de Concesión (INGEMMET), ID REINFO, RUC del Vendedor (SUNAT) y RNA del Artesano. Estos detalles se notarizan en el Servicio de Consenso de Hedera, haciendo la procedencia inmutable y verificable.",
+    "q5": "¿Por qué usar blockchain Hedera?",
+    "a5": "Hedera proporciona velocidad, bajas comisiones y eficiencia energética. Su libro mayor distribuido asegura que la procedencia, el cumplimiento y el reconocimiento de artesanos se almacenen de forma segura, sean auditables y accesibles globalmente. Los contratos inteligentes garantizan que las regalías fluyan directamente a los artesanos.",
+    "q6": "¿Puedo comprar NFTs de Umiña o Achala?",
+    "a6": "Sí. Los compradores pueden conectar carteras compatibles con Hedera a la plataforma y comprar NFTs directamente. Las transacciones son transparentes, y las regalías se enrutan automáticamente a los artesanos, garantizando reconocimiento justo.",
+    "q7": "¿Qué hace únicos los NFTs de Umiña Achala?",
+    "a7": "Más allá del cumplimiento y la procedencia, los NFTs de Umiña Achala capturan artesanía — tipo de montaje, reconocimiento de artesano, técnicas y creaciones de joyería compuesta. Esto asegura tanto transparencia legal como apreciación cultural."
+  },
+  "contact": {
+    "title": "Contacto Umiña Achala",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar"
+  },
+  "marketplace": {
+    "noResults": "Ninguna piedra coincide con tus filtros. Intenta ajustar tu búsqueda."
+  },
+  "card": {
+    "viewUmina": "Ver Umiña",
+    "viewAchala": "Ver Achala",
+    "buySoon": "¡Compra con RUMI próximamente!",
+    "mountedBy": "Montado por:"
+  },
+  "filters": {
+    "type": "Tipo:",
+    "cut": "Corte:",
+    "mounted": "Montado:",
+    "all": "Todo",
+    "mounted_yes": "Montado",
+    "mounted_no": "Sin Montar"
+  },
+  "privacy": {
+    "title": "Privacidad y Cookies",
+    "policy": "🔒 Política de Privacidad",
+    "policyDesc": "Umiña Achala valora tu privacidad. Solo recopilamos la información necesaria para proporcionar transacciones seguras, verificar cumplimiento y apoyar a los artesanos. Los datos personales nunca se venden ni se comparten con terceros fuera del ecosistema.",
+    "policyItems": [
+      "Las direcciones de billetera se utilizan solo para autenticación y transacciones.",
+      "Los identificadores de cumplimiento (ID de Concesión, ID REINFO, RUC, RNA) se almacenan inmutablemente en Hedera.",
+      "Los metadatos se vinculan a NFTs para procedencia y transparencia."
+    ],
+    "cookies": "🍪 Cookies",
+    "cookiesDesc": "Nuestra plataforma usa cookies para mejorar la experiencia del usuario y garantizar acceso seguro. Las cookies nos ayudan a recordar preferencias, mantener la integridad de la sesión y analizar el uso de la plataforma.",
+    "essential": "<strong>Cookies Esenciales:</strong> Requeridas para inicio de sesión, conexión de billetera y navegación segura.",
+    "preference": "<strong>Cookies de Preferencia:</strong> Almacenan idioma, pantalla y configuración de accesibilidad.",
+    "analytics": "<strong>Cookies de Análisis:</strong> Proporcionan información sobre el uso de la plataforma para mejorar los servicios.",
+    "rights": "⚖️ Tus Derechos",
+    "rightsDesc": "Puedes solicitar acceso a tus datos, pedir correcciones o solicitar eliminación cuando sea aplicable. Los registros de blockchain son inmutables, pero los datos fuera de la cadena, como las preferencias, pueden actualizarse o eliminarse."
+  },
+  "pager": {
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "admin": {
+    "title": "Acceso Admin NFT",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "logIn": "Iniciar Sesión"
+  },
+  "modal": {
+    "viewHashscan": "Ver Token Acuñado en HashScan",
+    "viewCompliance": "Ver Tema HCS de Cumplimiento"
+  },
+  "compliance": {
+    "title": "Panel de Cumplimiento (Vista de Regulador)",
+    "search": "Buscar por Stone ID, Permiso, Tipo de Corte o Hedera Tx ID",
+    "stoneId": "Stone ID",
+    "permitNumber": "Número de Permiso",
+    "cutType": "Tipo de Corte",
+    "txId": "Tx ID",
+    "exportStatus": "Estado de Exportación",
+    "status": "Estado",
+    "lastUpdated": "Última Actualización",
+    "columnTitles": "📊 Títulos de Columnas Explicados",
+    "stoneIdDesc": "Identificador único para cada piedra.",
+    "permitNumberDesc": "Referencia oficial de permiso de exportación/minería.",
+    "cutTypeDesc": "Estado bruto, cortado o montado de la piedra.",
+    "txIdDesc": "ID de Transacción de Hedera anclando prueba de cumplimiento.",
+    "exportStatusDesc": "Estado del ciclo de vida de exportación (Pendiente, Verificado, Restringido, No Aplicable).",
+    "statusDesc": "Estado de cumplimiento actual (Cumplido, Pendiente, Restringido).",
+    "lastUpdatedDesc": "Marca de tiempo de la última verificación de cumplimiento.",
+    "auditTrail": "📜 Registro de Auditoría",
+    "auditItems": [
+      "Piedra registrada → Permiso emitido",
+      "Proceso de corte registrado",
+      "Proceso de montaje registrado",
+      "Permiso de exportación verificado",
+      "Transacción anclada en Hedera"
+    ]
+  }
+}

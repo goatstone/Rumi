@@ -1,8 +1,10 @@
 // AdminNFT.tsx
 import React, { useState } from "react";
 import styles from "./AdminNFT.module.css";
+import { useTranslation } from "react-i18next";
 
 const AdminNFT: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({ username: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,10 +20,10 @@ const AdminNFT: React.FC = () => {
 
   return (
     <div className={styles.admin}>
-      <h1 className={styles.title}>Administer NFT Login</h1>
+      <h1 className={styles.title}>{t("admin.title")}</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.label}>
-          Username
+          {t("admin.username")}
           <input
             type="text"
             name="username"
@@ -32,7 +34,7 @@ const AdminNFT: React.FC = () => {
           />
         </label>
         <label className={styles.label}>
-          Password
+          {t("admin.password")}
           <input
             type="password"
             name="password"
@@ -43,7 +45,7 @@ const AdminNFT: React.FC = () => {
           />
         </label>
         <button type="submit" className={styles.button}>
-          Log In
+          {t("admin.logIn")}
         </button>
       </form>
     </div>

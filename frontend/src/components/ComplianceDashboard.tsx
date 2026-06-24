@@ -1,6 +1,7 @@
 // ComplianceDashboard.tsx
 import React, { useState } from "react";
 import styles from "./ComplianceDashboard.module.css";
+import { useTranslation } from "react-i18next";
 
 interface ComplianceItem {
   id: string;
@@ -47,6 +48,7 @@ const mockData: ComplianceItem[] = [
 ];
 
 const ComplianceDashboard: React.FC = () => {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
 
   const filteredData = mockData.filter(
@@ -59,12 +61,12 @@ const ComplianceDashboard: React.FC = () => {
 
   return (
     <div className={styles.dashboard}>
-      <h1 className={styles.title}>Compliance Dashboard (Regulator View)</h1>
+      <h1 className={styles.title}>{t("compliance.title")}</h1>
 
       <div className={styles.searchBar}>
         <input
           type="text"
-          placeholder="Search by Stone ID, Permit, Cut Type, or Hedera Tx ID"
+          placeholder={t("compliance.search")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className={styles.input}
@@ -74,13 +76,13 @@ const ComplianceDashboard: React.FC = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Stone ID</th>
-            <th>Permit Number</th>
-            <th>Cut Type</th>
-            <th>Tx ID</th>
-            <th>Export Status</th>
-            <th>Status</th>
-            <th>Last Updated</th>
+            <th>{t("compliance.stoneId")}</th>
+            <th>{t("compliance.permitNumber")}</th>
+            <th>{t("compliance.cutType")}</th>
+            <th>{t("compliance.txId")}</th>
+            <th>{t("compliance.exportStatus")}</th>
+            <th>{t("compliance.status")}</th>
+            <th>{t("compliance.lastUpdated")}</th>
           </tr>
         </thead>
         <tbody>
@@ -103,26 +105,24 @@ const ComplianceDashboard: React.FC = () => {
       </table>
 
       <section className={styles.columnTitles}>
-        <h2>📊 Column Titles Explained</h2>
+        <h2>{t("compliance.columnTitles")}</h2>
         <ul>
-          <li><strong>Stone ID</strong> — Unique identifier for each stone.</li>
-          <li><strong>Permit Number</strong> — Official export/mining permit reference.</li>
-          <li><strong>Cut Type</strong> — Raw, Cut, or Mounted state of the stone.</li>
-          <li><strong>Tx ID</strong> — Hedera Transaction ID anchoring compliance proof.</li>
-          <li><strong>Export Status</strong> — Export lifecycle state (Pending, Verified, Restricted, Not Applicable).</li>
-          <li><strong>Status</strong> — Current compliance state (Compliant, Pending, Restricted).</li>
-          <li><strong>Last Updated</strong> — Timestamp of the latest compliance check.</li>
+          <li><strong>{t("compliance.stoneId")}</strong> — {t("compliance.stoneIdDesc")}</li>
+          <li><strong>{t("compliance.permitNumber")}</strong> — {t("compliance.permitNumberDesc")}</li>
+          <li><strong>{t("compliance.cutType")}</strong> — {t("compliance.cutTypeDesc")}</li>
+          <li><strong>{t("compliance.txId")}</strong> — {t("compliance.txIdDesc")}</li>
+          <li><strong>{t("compliance.exportStatus")}</strong> — {t("compliance.exportStatusDesc")}</li>
+          <li><strong>{t("compliance.status")}</strong> — {t("compliance.statusDesc")}</li>
+          <li><strong>{t("compliance.lastUpdated")}</strong> — {t("compliance.lastUpdatedDesc")}</li>
         </ul>
       </section>
 
       <section className={styles.timeline}>
-        <h2>📜 Audit Trail</h2>
+        <h2>{t("compliance.auditTrail")}</h2>
         <ul>
-          <li>Stone registered → Permit issued</li>
-          <li>Cutting process logged</li>
-          <li>Mounting process logged</li>
-          <li>Export permit verified</li>
-          <li>Transaction anchored on Hedera</li>
+          {t("compliance.auditItems", { returnObjects: true }).map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
       </section>
     </div>

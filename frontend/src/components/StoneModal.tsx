@@ -2,6 +2,7 @@
 import React from "react";
 import { Rumi } from "../types/rumi";
 import styles from "./StoneModal.module.css";
+import { useTranslation } from "react-i18next";
 
 interface StoneModalProps {
   open: Rumi | null;
@@ -9,6 +10,7 @@ interface StoneModalProps {
 }
 
 const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
+  const { t } = useTranslation();
   if (!open) return null;
 
   return (
@@ -45,7 +47,6 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
               </dl>
             </div>
             <div className={styles.hashscanLinks}>
-              {/* Minted token link (only if tokenId + serialNumber exist) */}
               {open.tokenId && open.serialNumber && (
                 <p>
                   <a
@@ -53,7 +54,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View Minted Token on HashScan
+                    {t("modal.viewHashscan")}
                   </a>
                 </p>
               )}
@@ -66,7 +67,7 @@ const StoneModal: React.FC<StoneModalProps> = ({ open, setOpen }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View Compliance HCS Topic
+                    {t("modal.viewCompliance")}
                   </a>
                 </p>
               )}

@@ -2,8 +2,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Footer.module.css";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className={styles.siteFooter}>
       <div className={styles.footerLinks}>
@@ -15,7 +18,7 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          Home
+          {t("nav.home")}
         </NavLink>
         <NavLink
           to="/marketplace"
@@ -23,7 +26,7 @@ const Footer = () => {
             isActive ? `${styles.footerLink} ${styles.active}` : styles.footerLink
           }
         >
-          Marketplace
+          {t("nav.marketplace")}
         </NavLink>
         <NavLink
           to="/about"
@@ -33,7 +36,7 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          About
+          {t("nav.about")}
         </NavLink>
         <NavLink
           to="/faqs"
@@ -43,7 +46,7 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          FAQs
+          {t("nav.faqs")}
         </NavLink>
         <NavLink
           to="/privacy"
@@ -53,7 +56,7 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          Privacy & Cookies
+          {t("nav.privacy")}
         </NavLink>
         <NavLink
           to="/contact"
@@ -63,7 +66,7 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          Contact
+          {t("nav.contact")}
         </NavLink>
         <NavLink
           to="/admin"
@@ -73,7 +76,7 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          Admin NFT
+          {t("nav.admin")}
         </NavLink>
         <NavLink
           to="/compliance"
@@ -83,12 +86,10 @@ const Footer = () => {
               : styles.footerLink
           }
         >
-          Compliance Dashboard
+          {t("nav.compliance")}
         </NavLink>
       </div>
-      <div className={styles.footerCopy}>
-        © 2026 Rumi Project. All rights reserved.
-      </div>
+      <div className={styles.footerCopy}>{t("footer.copyright")}</div>
     </footer>
   );
 };

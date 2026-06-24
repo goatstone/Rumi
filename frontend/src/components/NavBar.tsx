@@ -1,8 +1,11 @@
 // src/components/NavBar.tsx
 import { NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
+import { useTranslation } from "react-i18next";
 
 const NavBar = () => {
+  const { t } = useTranslation();
+
   return (
     <nav className={styles.siteNav}>
       <NavLink
@@ -11,7 +14,7 @@ const NavBar = () => {
           isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
         }
       >
-        Marketplace
+        {t("nav.marketplace")}
       </NavLink>
       <NavLink
         to="/about"
@@ -19,7 +22,7 @@ const NavBar = () => {
           isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
         }
       >
-        About
+        {t("nav.about")}
       </NavLink>
       <NavLink
         to="/"
@@ -27,7 +30,7 @@ const NavBar = () => {
           isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
         }
       >
-        Home
+        {t("nav.home")}
       </NavLink>
     </nav>
   );

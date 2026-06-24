@@ -37,3 +37,11 @@
   display: flex;
   gap: 12px;
 }
+
+.langButton {
+  background: transparent;
+  border: 1px solid var(--muted);
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

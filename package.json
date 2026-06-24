@@ -22,7 +22,10 @@
     "pinata": "^2.5.5",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "react-router-dom": "^7.18.0"
+    "react-router-dom": "^7.18.0",
+    "i18next": "^23.0.0",
+    "react-i18next": "^13.0.0",
+    "i18next-browser-languagedetector": "^7.0.1"
   },
   "engines": {
     "node": ">=18.0.0"

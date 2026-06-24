@@ -1,8 +1,10 @@
 // Contact.tsx
 import React, { useState } from "react";
 import styles from "./Contact.module.css";
+import { useTranslation } from "react-i18next";
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -18,10 +20,10 @@ const Contact: React.FC = () => {
 
   return (
     <div className={styles.contact}>
-      <h1 className={styles.title}>Contact Umiña Achala</h1>
+      <h1 className={styles.title}>{t("contact.title")}</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.label}>
-          Name
+          {t("contact.name")}
           <input
             type="text"
             name="name"
@@ -32,7 +34,7 @@ const Contact: React.FC = () => {
           />
         </label>
         <label className={styles.label}>
-          Email
+          {t("contact.email")}
           <input
             type="email"
             name="email"
@@ -43,7 +45,7 @@ const Contact: React.FC = () => {
           />
         </label>
         <label className={styles.label}>
-          Message
+          {t("contact.message")}
           <textarea
             name="message"
             value={formData.message}
@@ -52,7 +54,7 @@ const Contact: React.FC = () => {
             required
           />
         </label>
-        <button type="submit" className={styles.button}>Send</button>
+        <button type="submit" className={styles.button}>{t("contact.send")}</button>
       </form>
     </div>
   );

@@ -1,0 +1,144 @@
+{
+  "site": {
+    "title": "Umiña Achala",
+    "tagline": "Stones and jewelry from Peru"
+  },
+  "nav": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "about": "About",
+    "faqs": "FAQs",
+    "privacy": "Privacy & Cookies",
+    "contact": "Contact",
+    "admin": "Admin NFT",
+    "compliance": "Compliance Dashboard"
+  },
+  "footer": {
+    "copyright": "© 2026 Rumi Project. All rights reserved."
+  },
+  "hero": {
+    "desc1": "In Quechua, <b>Umiña</b> means a single precious stone, while <b>Achala</b> means jewelry crafted from many stones.",
+    "desc2": "<b>Umiña Achala</b> unites Peru's stones, minerals and jewelry with immutable records, authentic origins, and artisan storytelling. Every piece is traced from mine to craft, ensuring compliance, provenance, and cultural heritage.",
+    "browse": "Browse Marketplace"
+  },
+  "about": {
+    "title": "About Umina Achala",
+    "tagline": "Stones and jewelry from Peru",
+    "what": "🌄 What is Umina Achala?",
+    "whatDesc1": "<strong>Umina Achala</strong> unites stone provenance with artisanal jewelry. It bridges compliance, heritage, and digital provenance, creating a transparent marketplace for stones (<strong>Umina</strong>) and jewelry (<strong>Achala</strong> originating from Peru).",
+    "whatDesc2": "The project is built on the <strong>Hedera blockchain</strong>, chosen for its speed, low fees, and energy efficiency. Hedera's distributed ledger ensures that every stone and jewelry record is immutable, auditable, and verifiable. This means provenance data, artisan recognition, and compliance identifiers are securely stored and accessible worldwide.",
+    "umina": "💎 What is Umina?",
+    "uminaDesc": "<strong>Umina</strong> represents the certified stone (or mineral in solid form) in raw, cut or mounted form. Each stone is documented with provenance records, ensuring authenticity and compliance.",
+    "achala": "🌍 What is Achala?",
+    "achalaDesc": "<strong>Achala</strong> represents artisanal jewelry crafted from tokenized stones and minerals. While Umina certifies provenance, Achala transforms these stones into culturally significant creations that honor artisans and preserve heritage.",
+    "compliance": "⚖️ Compliance",
+    "complianceDesc": "Every Umina and Achala piece is anchored in <strong>Real World Assets (RWAs)</strong>, ensuring verifiability and compliance with Peruvian regulations.",
+    "complianceItems": ["Concession ID (INGEMMET)", "REINFO ID", "Vendor RUC (SUNAT)", "Artisan RNA for jewelry"],
+    "platform": "💻 Online Platform",
+    "platformUrl": "https://umina-achala.pe",
+    "platformDesc": "The <strong>Umina Achala Online Platform</strong> is the digital hub where provenance, compliance, and artistry converge. It provides collectors, artisans, and reviewers with transparent access to the lifecycle of stones and jewelry.",
+    "wallet": "🔐 Wallet Integration",
+    "walletItems": ["Users connect <strong>Hedera-compatible wallets</strong> to authenticate and transact.", "Wallets enable secure acquisition of <strong>Umina (stone NFTs)</strong> and <strong>Achala (jewelry NFTs)</strong>."],
+    "provenance": "📜 Provenance Explorer",
+    "provenanceItems": ["Each NFT includes <strong>metadata</strong>: concession ID, REINFO ID, artisan RNA, and vendor RUC.", "Buyers can trace the <strong>origin of stones</strong> and the <strong>artisanship of jewelry</strong>.", "Provenance records are immutable and verifiable on-chain."]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "What is Umina Achala?",
+    "a1": "<strong>Umina Achala</strong> is a cultural‑tech project that unites stone provenance with artisanal jewelry. It bridges compliance, heritage, and digital provenance, creating a transparent marketplace where certified stones (Umina) are elevated into jewelry (Achala).",
+    "q2": "What is Umina?",
+    "a2": "<strong>Umina</strong> represents certified stones — raw, cut, or mounted — documented with provenance records. Each Umina NFT ensures authenticity, compliance with Peruvian law, and immutable proof of origin.",
+    "q3": "What is Achala?",
+    "a3": "<strong>Achala</strong> is the jewelry counterpart to Umina. While Umina certifies individual stones, Achala represents composite artisanal jewelry, blending multiple stones into culturally significant creations while preserving provenance and recognizing craftsmanship.",
+    "q4": "How does Umina Achala ensure compliance?",
+    "a4": "Each NFT embeds legal identifiers such as Concession ID (INGEMMET), REINFO ID, Vendor RUC (SUNAT), and Artisan RNA. These details are notarized on the Hedera Consensus Service, making provenance immutable and verifiable.",
+    "q5": "Why use Hedera blockchain?",
+    "a5": "Hedera provides speed, low fees, and energy efficiency. Its distributed ledger ensures that provenance, compliance, and artisan recognition are securely stored, auditable, and globally accessible. Smart contracts guarantee royalties flow directly to artisans.",
+    "q6": "Can I buy Umina or Achala NFTs?",
+    "a6": "Yes. Buyers can connect Hedera‑compatible wallets to the platform and purchase NFTs directly. Transactions are transparent, and royalties are automatically routed to artisans, ensuring fair recognition.",
+    "q7": "What makes Umina Achala NFTs unique?",
+    "a7": "Beyond compliance and provenance, Umina Achala NFTs capture artistry — mount type, artisan recognition, techniques, and composite jewelry creations. This ensures both legal transparency and cultural appreciation."
+  },
+  "contact": {
+    "title": "Contact Umiña Achala",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "marketplace": {
+    "noResults": "No stones match your filters. Try adjusting your search."
+  },
+  "card": {
+    "viewUmina": "View Umiña",
+    "viewAchala": "View Achala",
+    "buySoon": "Buy with RUMI coming soon!",
+    "mountedBy": "Mounted by:"
+  },
+  "filters": {
+    "type": "Type:",
+    "cut": "Cut:",
+    "mounted": "Mounted:",
+    "all": "All",
+    "mounted_yes": "Mounted",
+    "mounted_no": "Unmounted"
+  },
+  "privacy": {
+    "title": "Privacy & Cookies",
+    "policy": "🔒 Privacy Policy",
+    "policyDesc": "Umina Achala values your privacy. We collect only the information necessary to provide secure transactions, verify compliance, and support artisans. Personal data is never sold or shared with third‑parties outside the ecosystem.",
+    "policyItems": [
+      "Wallet addresses are used solely for authentication and transactions.",
+      "Compliance identifiers (Concession ID, REINFO ID, RUC, RNA) are stored immutably on Hedera.",
+      "Metadata is linked to NFTs for provenance and transparency."
+    ],
+    "cookies": "🍪 Cookies",
+    "cookiesDesc": "Our platform uses cookies to improve user experience and ensure secure access. Cookies help us remember preferences, maintain session integrity, and analyze platform usage.",
+    "essential": "<strong>Essential Cookies:</strong> Required for login, wallet connection, and secure navigation.",
+    "preference": "<strong>Preference Cookies:</strong> Store language, display, and accessibility settings.",
+    "analytics": "<strong>Analytics Cookies:</strong> Provide insights into platform usage to improve services.",
+    "rights": "⚖️ Your Rights",
+    "rightsDesc": "You may request access to your data, ask for corrections, or request deletion where applicable. Blockchain records are immutable, but off‑chain data such as preferences can be updated or removed."
+  },
+  "pager": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "admin": {
+    "title": "Administer NFT Login",
+    "username": "Username",
+    "password": "Password",
+    "logIn": "Log In"
+  },
+  "modal": {
+    "viewHashscan": "View Minted Token on HashScan",
+    "viewCompliance": "View Compliance HCS Topic"
+  },
+  "compliance": {
+    "title": "Compliance Dashboard (Regulator View)",
+    "search": "Search by Stone ID, Permit, Cut Type, or Hedera Tx ID",
+    "stoneId": "Stone ID",
+    "permitNumber": "Permit Number",
+    "cutType": "Cut Type",
+    "txId": "Tx ID",
+    "exportStatus": "Export Status",
+    "status": "Status",
+    "lastUpdated": "Last Updated",
+    "columnTitles": "📊 Column Titles Explained",
+    "stoneIdDesc": "Unique identifier for each stone.",
+    "permitNumberDesc": "Official export/mining permit reference.",
+    "cutTypeDesc": "Raw, Cut, or Mounted state of the stone.",
+    "txIdDesc": "Hedera Transaction ID anchoring compliance proof.",
+    "exportStatusDesc": "Export lifecycle state (Pending, Verified, Restricted, Not Applicable).",
+    "statusDesc": "Current compliance state (Compliant, Pending, Restricted).",
+    "lastUpdatedDesc": "Timestamp of the latest compliance check.",
+    "auditTrail": "📜 Audit Trail",
+    "auditItems": [
+      "Stone registered → Permit issued",
+      "Cutting process logged",
+      "Mounting process logged",
+      "Export permit verified",
+      "Transaction anchored on Hedera"
+    ]
+  }
+}
