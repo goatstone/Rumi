@@ -8,7 +8,7 @@ import AboutPage from "./components/AboutPage";
 import FAQ from "./components/FAQ";
 import Privacy from "./components/Privacy";
 import Contact from "./components/Contact";
-// import MintPage from "./pages/MintPage";
+import AdminNFT from "./components/AdminNFT";
 // import CompliancePage from "./pages/CompliancePage";
 
 function App(): JSX.Element {
@@ -23,8 +23,8 @@ function App(): JSX.Element {
            <Route path="/faqs" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
            <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/admin" element={<MintPage />} />
-          <Route path="/compliance" element={<CompliancePage />} /> */}
+           <Route path="/admin" element={<AdminNFT />} />
+          {/*<Route path="/compliance" element={<CompliancePage />} /> */}
         </Routes>
         <Footer />
       </main>
