@@ -1,5 +1,5 @@
 import fs from "fs";
-import { validateMetadata } from "../src/metadataValidator.js";
+import { validateMetadata } from "../hedera-scripts/metadataValidator.js";
 
 // --- Mock Hedera SDK ---
 jest.mock("@hashgraph/sdk", () => ({
@@ -22,7 +22,7 @@ jest.mock("ipfs-http-client"); // Jest will auto‑load __mocks__/ipfs-http-clie
 
 describe("mintRumiNFT.js workflow", () => {
   test("validates metadata JSON against schema", () => {
-    const metadata = JSON.parse(fs.readFileSync("json/example_1.json", "utf8"));
+    const metadata = JSON.parse(fs.readFileSync("./json/example.json", "utf8"));
     const { valid, errors } = validateMetadata(metadata);
     expect(valid).toBe(true);
     expect(errors).toBeNull();
