@@ -1,13 +1,14 @@
 // generate-rumis.js
 import fs from "fs";
+import path from "path";
 
 // Load example JSON schema as template
 const example = JSON.parse(fs.readFileSync("../json/example.json", "utf-8"));
 
-const stoneTypes = [
-  "Amethyst", "Quartz", "Chrysocolla", "Obsidian", "Jade",
-  "Tourmaline", "Lapis Lazuli", "Malachite", "Ruby", "Sapphire"
-];
+// Import your images object (or paste it here)
+import { images } from "./image_map.js"; // adjust path if needed
+
+const stoneTypes = Object.keys(images); // derive types directly from images object
 
 const stoneCuts = [
   "Cabochon", "Faceted", "Brilliant Cut", "Step Cut", "Rose Cut",
@@ -37,20 +38,33 @@ function randomArtisan() {
   };
 }
 
+function pickImage(type, isCut, mounted) {
+  const stoneKey = type.toLowerCase().replace(" ", "_");
+  const stoneImages = images[stoneKey];
+
+  if (!stoneImages) return "";
+
+  if (mounted) {
+    return isCut
+      ? randomChoice(stoneImages.mounted.cut)
+      : randomChoice(stoneImages.mounted.uncut);
+  } else {
+    return isCut
+      ? randomChoice(stoneImages.cut)
+      : randomChoice(stoneImages.uncut);
+  }
+}
+
 function makeRumi(index, type) {
-  // Clone the example template deeply
   const rumi = JSON.parse(JSON.stringify(example));
 
-  // Generate IDs
   const id = `RUMI-2026-${type.substring(0,2).toUpperCase()}-${String(index).padStart(2,"0")}`;
 
-  // Random artisan involvement
-  const isCut = Math.random() < 0.8; // 80% chance cut
+  const isCut = Math.random() < 0.8;
   const cutArtisan = isCut ? randomArtisan() : { id: "", name: "" };
-  const mounted = Math.random() < 0.5; // 50% chance mounted
+  const mounted = Math.random() < 0.5;
   const mountArtisan = mounted ? randomArtisan() : { id: "", name: "" };
 
-  // Dynamic name and description
   const name = `Rumi Stone #${String(index).padStart(3,"0")} - ${type}`;
   const description = isCut
     ? mounted
@@ -58,18 +72,17 @@ function makeRumi(index, type) {
       : `Certified Mine-to-Market ${type}, cut by ${cutArtisan.name}, unmounted specimen.`
     : `Certified Mine-to-Market ${type}, uncut specimen.`;
 
-  // Update top-level metadata
+  // ✅ Use public folder image reference
+  const imagePath = pickImage(type, isCut, mounted);
   rumi.name = name;
   rumi.description = description;
-  rumi.image = `ipfs://Qm${type.replace(" ","")}ThumbHash`;
+  rumi.image = `/${imagePath}`; // served from /public/images/... in Vite
 
-  // Update properties (override only dynamic fields)
   rumi.properties.stone_id = id;
   rumi.properties.mining_concession = `Peru-${type}-${index}`;
   rumi.properties.cut_by_id = cutArtisan.id;
   rumi.properties.mounted_by_id = mountArtisan.id;
 
-    // Update attributes selectively
   rumi.attributes = rumi.attributes.map(attr => {
     switch (attr.trait_type) {
       case "Stone Type":
@@ -87,17 +100,15 @@ function makeRumi(index, type) {
       case "Description":
         return { ...attr, value: description };
       default:
-        return attr; // keep template value
+        return attr;
     }
   });
 
   return rumi;
 }
 
-// Quantity comes from command line argument, default 10
 const quantity = parseInt(process.argv[2], 10) || 10;
 
-// Iterate through stoneTypes cyclically if quantity > stoneTypes.length
 const rumis = Array.from({ length: quantity }, (_, idx) => {
   const type = stoneTypes[idx % stoneTypes.length];
   return makeRumi(idx+1, type);
